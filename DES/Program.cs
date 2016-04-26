@@ -12,8 +12,9 @@ namespace DES
     {
         static void Main(string[] args)
         {
-            DES d = new DES("133457799BBCDFF1", "");
+            DES d = new DES("133457799BBCDFF1", "0123456789ABCDEF");
             d.keygen();
+            d.encrypt();
         }
     }
 }
