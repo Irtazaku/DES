@@ -14,7 +14,8 @@ namespace DES
         {
             DES d = new DES("133457799BBCDFF1", "0123456789ABCDEF");
             d.keygen();
-            d.encrypt();
+            string re=d.encrypt();
+            Console.WriteLine(re);
         }
     }
 }

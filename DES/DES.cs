@@ -41,7 +41,7 @@ namespace DES
                 
             }
         }
-        public void encrypt()
+        public string encrypt()
         {
             bool[] temp = masking(ip, message);
             bool[] tempL = new bool[32];
@@ -72,17 +72,32 @@ namespace DES
                 encrypted[i + 32] = tempL[i];
             }
             encrypted = masking(ip_1, encrypted);
-            for (int i = 0; i < encrypted.Length; i++)
-            {
-                if (i % 8 == 0)
-                    Console.Write("  ");
-                if (encrypted[i])
-                    Console.Write("1");
-                else
-                    Console.Write("0");
-            }
-            Console.WriteLine();
+            
+            string result = "";
+            string output = "";
 
+            for (int i = 0; i < 65; i++)
+            {
+                if (i % 4 == 0&& i!=0)
+                {
+                    result += ToBase(output, 2, 16);
+                    output = "";
+                }
+                try
+                {
+                    if (encrypted[i])
+                        output += "1";
+                    else
+                        output += "0";
+                }
+                catch (Exception e)
+                { }
+                
+
+            }
+
+
+            return result;
 
         }
         public bool[] SBox(bool[] arr)
