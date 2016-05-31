@@ -12,7 +12,7 @@ namespace DES
     {
         static void Main(string[] args)
         {
-            DES d = new DES("133457799BBCDFF1", "0123456789ABCDEF");
+            DES d = new DES("E8C9E7DD7C00A521", "B0B7B40DA9EE1A54");
             d.keygen();
             string re=d.encrypt();
             Console.WriteLine(re);
